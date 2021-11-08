@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+        android:fontFamily="@font/acube"
         android:layout_marginBottom="6dp"
         android:textColor="#000000"/>
 
