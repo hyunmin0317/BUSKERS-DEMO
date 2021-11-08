@@ -6,22 +6,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_signup.*
-import kotlinx.android.synthetic.main.activity_signup.login
-import kotlinx.android.synthetic.main.activity_signup.signup
-import kotlinx.android.synthetic.main.activity_signup.username_inputbox
+import kotlinx.android.synthetic.main.activity_signup2.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SignupActivity : AppCompatActivity() {
+class SignupActivity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_signup)
-        login.setOnClickListener { startActivity(Intent(this@SignupActivity, LoginActivity::class.java)) }
-        signup.setOnClickListener { register(this@SignupActivity) }
+        setContentView(R.layout.activity_signup2)
+        login.setOnClickListener { startActivity(Intent(this@SignupActivity2, LoginActivity2::class.java)) }
+        signup.setOnClickListener { register(this@SignupActivity2) }
     }
 
     fun register(activity: Activity) {

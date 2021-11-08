@@ -15,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ChooseActivity"></activity>
         <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".ChooseActivity" />
+        <activity android:name=".LoginActivity1" />
+        <activity android:name=".LoginActivity2" />
+        <activity android:name=".SignupActivity1" />
+        <activity android:name=".SignupActivity2" />
         <activity android:name=".OutStagramUploadActivity" />
         <activity android:name=".OutStagramMyPostListActivity" />
         <activity android:name=".OutStagramUserInfo" />

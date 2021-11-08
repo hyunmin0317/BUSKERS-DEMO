@@ -11,18 +11,12 @@ class IntroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_intro)
 
         var handler = Handler()
-        if ((application as MasterApplication).checkIsLogin()) {
-            handler.postDelayed({
-                var intent = Intent(this, OutStagramPostListActivity::class.java)
-                startActivity(intent)
-            }, 1000)
-        } else {
-            handler.postDelayed({
-                var intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-            }, 1000)
-        }
+
+        handler.postDelayed({
+            var intent = Intent(this, ChooseActivity::class.java)
+            startActivity(intent) }, 1000)
     }
+
 
     override fun onPause() {
         super.onPause()
