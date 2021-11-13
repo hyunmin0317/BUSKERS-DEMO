@@ -21,7 +21,7 @@ class UserInfo : AppCompatActivity() {
         upload.setOnClickListener { startActivity(Intent(this, UploadActivity::class.java)) }
 
         logout.setOnClickListener {
-            val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+            val sp = getSharedPreferences("login", Context.MODE_PRIVATE)
             val editor = sp.edit()
             editor.putString("username", "null")
             editor.putString("token", "null")
@@ -32,7 +32,7 @@ class UserInfo : AppCompatActivity() {
         }
     }
     fun getUserName(): String? {
-        val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+        val sp = getSharedPreferences("login", Context.MODE_PRIVATE)
         val username = sp.getString("username", "null")
         if (username == "null") return null
         else return username

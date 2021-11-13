@@ -39,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(activity, "로그인 하셨습니다.", Toast.LENGTH_LONG).show()
                         startActivity(Intent(activity, ChooseActivity::class.java))
                     } else {
+                        print(response)
                         Toast.makeText(activity, "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.", Toast.LENGTH_LONG).show()
                     }
                 }
@@ -51,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun saveUserToken(username: String, token: String, activity: Activity) {
-        val sp = activity.getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+        val sp = activity.getSharedPreferences("login", Context.MODE_PRIVATE)
         val editor = sp.edit()
         editor.putString("username", username)
         editor.putString("token", token)

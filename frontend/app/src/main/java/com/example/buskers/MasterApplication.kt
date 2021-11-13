@@ -44,7 +44,7 @@ class MasterApplication : Application() {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://outstagram.pythonanywhere.com/")
+            .baseUrl("https://buskers.pythonanywhere.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
@@ -53,14 +53,14 @@ class MasterApplication : Application() {
     }
 
     fun checkIsLogin(): Boolean {
-        val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+        val sp = getSharedPreferences("login", Context.MODE_PRIVATE)
         var token = sp.getString("token", "null")
         if (token != "null") return true
         else return false
     }
 
     fun getUserToken(): String? {
-        val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+        val sp = getSharedPreferences("login", Context.MODE_PRIVATE)
         val token = sp.getString("token", "null")
         if (token == "null") return null
         else return token

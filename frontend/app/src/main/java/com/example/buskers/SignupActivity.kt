@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_signup1.*
 import retrofit2.Call
@@ -41,6 +42,8 @@ class SignupActivity : AppCompatActivity() {
                         activity.startActivity(Intent(activity, ChooseActivity::class.java))
                     } else {
                         Toast.makeText(activity, "사용할 수 없는 아이디입니다.", Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity, response.toString(), Toast.LENGTH_LONG).show()
+
                     }
                 }
 
@@ -55,7 +58,7 @@ class SignupActivity : AppCompatActivity() {
     }
 
     fun saveUserToken(username: String, token: String, activity: Activity) {
-        val sp = activity.getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+        val sp = activity.getSharedPreferences("login", Context.MODE_PRIVATE)
         val editor = sp.edit()
         editor.putString("username", username)
         editor.putString("token", token)
