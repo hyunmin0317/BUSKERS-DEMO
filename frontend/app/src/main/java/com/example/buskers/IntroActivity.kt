@@ -13,7 +13,7 @@ class IntroActivity : AppCompatActivity() {
         var handler = Handler()
 
         handler.postDelayed({
-            var intent = Intent(this, ChooseActivity::class.java)
+            var intent = Intent(this, LoginActivity::class.java)
             startActivity(intent) }, 1000)
     }
 

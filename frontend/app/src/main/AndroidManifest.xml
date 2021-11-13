@@ -23,14 +23,12 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.buskers.ChooseActivity" />
-        <activity android:name="com.example.buskers.LoginActivity1" />
-        <activity android:name="com.example.buskers.LoginActivity2" />
-        <activity android:name="com.example.buskers.SignupActivity1" />
-        <activity android:name="com.example.buskers.SignupActivity2" />
-        <activity android:name="com.example.buskers.OutStagramUploadActivity" />
-        <activity android:name="com.example.buskers.OutStagramMyPostListActivity" />
-        <activity android:name="com.example.buskers.OutStagramUserInfo" />
-        <activity android:name="com.example.buskers.OutStagramPostListActivity" />
+        <activity android:name="com.example.buskers.LoginActivity" />
+        <activity android:name="com.example.buskers.SignupActivity" />
+        <activity android:name="com.example.buskers.ListActivity" />
+        <activity android:name="com.example.buskers.MyListActivity" />
+        <activity android:name="com.example.buskers.UploadActivity" />
+        <activity android:name="com.example.buskers.UserInfo" />
     </application>
 
 </manifest>

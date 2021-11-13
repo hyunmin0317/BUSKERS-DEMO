@@ -10,7 +10,7 @@ class ChooseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose)
 
-        busker.setOnClickListener { startActivity(Intent(this, LoginActivity1::class.java)) }
-        listener.setOnClickListener { startActivity(Intent(this, LoginActivity2::class.java)) }
+        busker.setOnClickListener { startActivity(Intent(this, ListActivity::class.java)) }
+        listener.setOnClickListener { startActivity(Intent(this, ListActivity::class.java)) }
     }
 }
