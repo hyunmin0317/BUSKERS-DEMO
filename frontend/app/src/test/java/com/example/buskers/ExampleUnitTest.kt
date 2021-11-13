@@ -1,4 +1,4 @@
-package com.example.outstagram
+package com.example.buskers
 
 import org.junit.Test
 

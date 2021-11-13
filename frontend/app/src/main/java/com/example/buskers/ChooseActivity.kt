@@ -1,4 +1,4 @@
-package com.example.outstagram
+package com.example.buskers
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

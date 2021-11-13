@@ -1,4 +1,4 @@
-package com.example.outstagram
+package com.example.buskers
 
 import android.app.Application
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.example.outstagram
+package com.example.buskers
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

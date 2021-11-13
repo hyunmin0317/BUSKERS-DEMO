@@ -1,4 +1,4 @@
-package com.example.outstagram
+package com.example.buskers
 
 import android.app.Activity
 import android.content.Context
@@ -6,21 +6,21 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_login1.*
+import kotlinx.android.synthetic.main.activity_login2.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class LoginActivity1 : AppCompatActivity() {
+class LoginActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_login1)
-        setupListener(this@LoginActivity1)
+        setContentView(R.layout.activity_login2)
+        setupListener(this@LoginActivity2)
     }
 
     fun setupListener(activity: Activity) {
-        signup.setOnClickListener { startActivity(Intent(activity, SignupActivity1::class.java)) }
+        signup.setOnClickListener { startActivity(Intent(activity, SignupActivity2::class.java)) }
 
         login.setOnClickListener {
             val username = username_inputbox.text.toString()
