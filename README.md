@@ -1,6 +1,6 @@
 # BUSKERS-FrontEnd
 
-### WANTED [해, 커리어] 해커톤 팀프로젝트 - BUSKERS Front-End
+### WANTED [해, 커리어] 해커톤 팀프로젝트 - BUSKERS FrontEnd
 
 ---
 
