@@ -10,7 +10,15 @@
 
   * #### [Front-End](https://github.com/hyunmin0317/BUSKERS-FrontEnd)
 
+    * #### Framework: Android
+
+    * #### Language: Kotlin
+
   * #### [Back-End](https://github.com/hyunmin0317/BUSKERS-BackEnd)
+
+    * #### Framework: Django
+
+    * #### Language: Python
 
   * #### [APK 다운로드](https://github.com/hyunmin0317/BUSKERS-FrontEnd/blob/master/github/BUSKERS.apk?raw=true)
 
