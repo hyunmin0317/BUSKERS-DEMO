@@ -6,25 +6,30 @@
 
 ![logo](https://github.com/hyunmin0317/BUSKERS-FrontEnd/blob/master/github/logo.jpg?raw=true)
 
-* ### BUSKERS
+## :musical_note: ​BUSKERS
 
-  * #### [Front-End](https://github.com/hyunmin0317/BUSKERS-FrontEnd)
+* ### [Front-End](https://github.com/hyunmin0317/BUSKERS-FrontEnd)
+  * #### Framework: Android
 
-    * #### Framework: Android
+  * #### Language: Kotlin
 
-    * #### Language: Kotlin
+* ### [Back-End](https://github.com/hyunmin0317/BUSKERS-BackEnd)
 
-  * #### [Back-End](https://github.com/hyunmin0317/BUSKERS-BackEnd)
+  * #### Framework: Django
 
-    * #### Framework: Django
+  * #### Language: Python
 
-    * #### Language: Python
+* ### [APK 다운로드](https://github.com/hyunmin0317/BUSKERS-FrontEnd/blob/master/github/BUSKERS.apk?raw=true)
 
-  * #### [APK 다운로드](https://github.com/hyunmin0317/BUSKERS-FrontEnd/blob/master/github/BUSKERS.apk?raw=true)
+<br>
 
-* ### 팀원
+## :musical_note: ​프로젝트 설명
 
-  * **최현민 [(hyunmin0317)](https://github.com/hyunmin0317?tab=repositories)**
-  * **임혜지 [(hyeji1221)](https://github.com/hyeji1221)**
-  * **배은기 [(BaeEunGi)](https://github.com/BaeEunGi)**
-  * **안선정 [(sunjungAn)](https://github.com/sunjungAn)**
+<br>
+
+## :musical_note: ​팀원
+
+* **최현민 [(hyunmin0317)](https://github.com/hyunmin0317?tab=repositories)**
+* **임혜지 [(hyeji1221)](https://github.com/hyeji1221)**
+* **배은기 [(BaeEunGi)](https://github.com/BaeEunGi)**
+* **안선정 [(sunjungAn)](https://github.com/sunjungAn)**
