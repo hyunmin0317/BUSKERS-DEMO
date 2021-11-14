@@ -1,12 +1,18 @@
-# BUSKERS-DEMO
+# BUSKERS-FrontEnd
 
-### WANTED 해커리어 팀프로젝트 - BUSKERS DEMO 버전
+### WANTED [해, 커리어] 해커톤 팀프로젝트 - BUSKERS Front-End
 
 ---
 
-![logo](https://github.com/hyunmin0317/BUSKERS-DEMO/blob/master/logo.jpg?raw=true)
+![logo](https://github.com/hyunmin0317/BUSKERS-FrontEnd/blob/master/github/logo.jpg?raw=true)
 
-* ### [APK 다운로드](https://github.com/hyunmin0317/BUSKERS-DEMO/blob/master/BUSKERS.apk?raw=true)
+* ### BUSKERS
+
+  * #### [Front-End](https://github.com/hyunmin0317/BUSKERS-FrontEnd)
+
+  * #### [Back-End](https://github.com/hyunmin0317/BUSKERS-BackEnd)
+
+  * #### [APK 다운로드](https://github.com/hyunmin0317/BUSKERS-FrontEnd/blob/master/github/BUSKERS.apk?raw=true)
 
 * ### 팀원
 
