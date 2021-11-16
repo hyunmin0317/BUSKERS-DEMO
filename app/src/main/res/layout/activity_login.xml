@@ -70,17 +70,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text = "회원가입"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:textColor="#FFFFFF"
-            android:layout_marginRight="40dp"
+            android:fontFamily="@font/nanumpen"
+            android:layout_marginRight="65dp"
             android:textAlignment="textEnd"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text = "아이디/비밀번호 찾기"
-            android:textSize="15dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/nanumpen"
             android:textColor="#FFFFFF"
-            android:layout_marginRight="40dp"
+            android:layout_marginRight="65dp"
             android:textAlignment="textEnd"/>
 
         <LinearLayout
@@ -103,7 +105,7 @@
                     android:id="@+id/busker"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="10dp"
                     android:padding="10dp"
                     android:background="@drawable/rounded_button"
                     android:hint="ID"
