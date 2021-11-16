@@ -27,7 +27,7 @@ class MyPostAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = inflater.inflate(R.layout.outstagram_item_view, parent, false)
+        val view = inflater.inflate(R.layout.item_view, parent, false)
         return ViewHolder(view)
     }
 
