@@ -36,4 +36,9 @@ interface RetrofitService {
     @GET("post/mylist/")
     fun getUserPostList():Call<ArrayList<Post>>
 
+    @DELETE("post/{pk}/delete/")
+    fun delete(
+        @Path("pk") pk: Int
+    ):Call<Post>
+
 }

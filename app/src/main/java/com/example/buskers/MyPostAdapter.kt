@@ -1,17 +1,24 @@
 package com.example.buskers
 
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MyPostAdapter(
     var postList: ArrayList<Post>,
     val inflater: LayoutInflater,
-    val glide: RequestManager
+    val glide: RequestManager,
+    val activity: Activity
 ) : RecyclerView.Adapter<MyPostAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -23,11 +30,31 @@ class MyPostAdapter(
             postOwner = itemView.findViewById(R.id.post_owner)
             postImage = itemView.findViewById(R.id.post_img)
             postContent = itemView.findViewById(R.id.post_content)
+
+            itemView.findViewById<TextView>(R.id.delete).setOnClickListener {
+                (activity.application as MasterApplication).service.delete(
+                    postList.get(adapterPosition).id!!
+                ).enqueue(object : Callback<Post> {
+
+                    override fun onResponse(call: Call<Post>, response: Response<Post>) {
+                        if (response.isSuccessful) {
+                            Toast.makeText(activity, "삭제되었습니다.", Toast.LENGTH_LONG).show()
+                            activity.startActivity(Intent(activity, MyListActivity::class.java))
+                        } else {
+                            Toast.makeText(activity, "삭제 오류", Toast.LENGTH_LONG).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<Post>, t: Throwable) {
+                        Toast.makeText(activity, "서버 오류", Toast.LENGTH_LONG).show()
+                    }
+                })
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = inflater.inflate(R.layout.item_view, parent, false)
+        val view = inflater.inflate(R.layout.myitem_view, parent, false)
         return ViewHolder(view)
     }
 

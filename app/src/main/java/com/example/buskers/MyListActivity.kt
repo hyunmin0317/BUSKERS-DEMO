@@ -43,7 +43,8 @@ class MyListActivity : AppCompatActivity() {
                         val adapter = MyPostAdapter(
                             myPostList!!,
                             LayoutInflater.from(this@MyListActivity),
-                            glide
+                            glide,
+                            this@MyListActivity
                         )
                         myPostList.reverse()
                         myPostRecyclerView.adapter = adapter
