@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.example.buskers.MasterApplication"
+        android:name=".MasterApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,21 +15,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.example.buskers.IntroActivity">
+        <activity android:name=".DeleteActivity"></activity>
+        <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.buskers.ChooseActivity" />
-        <activity android:name="com.example.buskers.LoginActivity" />
-        <activity android:name="com.example.buskers.SignupActivity" />
-        <activity android:name="com.example.buskers.ListActivity" />
-        <activity android:name="com.example.buskers.MyListActivity" />
-        <activity android:name="com.example.buskers.UploadActivity" />
-        <activity android:name="com.example.buskers.UpdateActivity" />
-        <activity android:name="com.example.buskers.UserInfo" />
+        <activity android:name=".ChooseActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".ListActivity" />
+        <activity android:name=".MyListActivity" />
+        <activity android:name=".UploadActivity" />
+        <activity android:name=".UpdateActivity" />
+        <activity android:name=".UserInfo" />
     </application>
 
 </manifest>
