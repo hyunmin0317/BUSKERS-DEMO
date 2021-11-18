@@ -18,7 +18,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
 
-class UploadActivity : AppCompatActivity() {
+class UpdateActivity : AppCompatActivity() {
 
     lateinit var filePath: String
 
@@ -27,7 +27,7 @@ class UploadActivity : AppCompatActivity() {
         setContentView(R.layout.activity_upload)
 
         val cameraPermissionCheck = ContextCompat.checkSelfPermission(
-            this@UploadActivity,
+            this@UpdateActivity,
             android.Manifest.permission.READ_EXTERNAL_STORAGE
         )
 
@@ -75,22 +75,23 @@ class UploadActivity : AppCompatActivity() {
         val fileRequestBody = RequestBody.create(MediaType.parse("image/*"), file)
         val part = MultipartBody.Part.createFormData("image", file.name, fileRequestBody)
         val content = RequestBody.create(MediaType.parse("text/plain"), getContent())
+        val pk = intent.getIntExtra("pk", -1)
 
-        (application as MasterApplication).service.uploadPost(
-            part, content
+        (application as MasterApplication).service.updatePost(
+            pk, part, content
         ).enqueue(object : Callback<Post> {
             override fun onResponse(call: Call<Post>, response: Response<Post>) {
                 if (response.isSuccessful) {
                     finish()
-                    Toast.makeText(this@UploadActivity, "저장되었습니다.", Toast.LENGTH_LONG).show()
-                    startActivity(Intent(this@UploadActivity, MyListActivity::class.java))
+                    Toast.makeText(this@UpdateActivity, "수정되었습니다.", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this@UpdateActivity, MyListActivity::class.java))
                 } else {
-                    Toast.makeText(this@UploadActivity, "400 Bad Request", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@UpdateActivity, "400 Bad Request", Toast.LENGTH_LONG).show()
                 }
             }
 
             override fun onFailure(call: Call<Post>, t: Throwable) {
-                Toast.makeText(this@UploadActivity, "서버 오류", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@UpdateActivity, "서버 오류", Toast.LENGTH_LONG).show()
             }
         })
     }

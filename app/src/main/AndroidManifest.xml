@@ -28,6 +28,7 @@
         <activity android:name="com.example.buskers.ListActivity" />
         <activity android:name="com.example.buskers.MyListActivity" />
         <activity android:name="com.example.buskers.UploadActivity" />
+        <activity android:name="com.example.buskers.UpdateActivity" />
         <activity android:name="com.example.buskers.UserInfo" />
     </application>
 

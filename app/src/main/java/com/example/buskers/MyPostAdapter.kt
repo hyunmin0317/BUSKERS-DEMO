@@ -32,7 +32,7 @@ class MyPostAdapter(
             postContent = itemView.findViewById(R.id.post_content)
 
             itemView.findViewById<TextView>(R.id.delete).setOnClickListener {
-                (activity.application as MasterApplication).service.delete(
+                (activity.application as MasterApplication).service.deletePost(
                     postList.get(adapterPosition).id!!
                 ).enqueue(object : Callback<Post> {
 
@@ -49,6 +49,12 @@ class MyPostAdapter(
                         Toast.makeText(activity, "서버 오류", Toast.LENGTH_LONG).show()
                     }
                 })
+            }
+
+            itemView.findViewById<TextView>(R.id.update).setOnClickListener {
+                val intent = Intent(activity, UpdateActivity::class.java)
+                intent.putExtra("pk", postList.get(adapterPosition).id)
+                activity.startActivity(intent)
             }
         }
     }
