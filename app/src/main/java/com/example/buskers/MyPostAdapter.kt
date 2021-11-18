@@ -32,26 +32,23 @@ class MyPostAdapter(
             postContent = itemView.findViewById(R.id.post_content)
 
             itemView.findViewById<TextView>(R.id.delete).setOnClickListener {
-                val intent = Intent(activity, DeleteActivity::class.java)
-                intent.putExtra("pk", postList.get(adapterPosition).id)
-                activity.startActivity(intent)
-//                (activity.application as MasterApplication).service.deletePost(
-//                    postList.get(adapterPosition).id!!
-//                ).enqueue(object : Callback<Post> {
-//
-//                    override fun onResponse(call: Call<Post>, response: Response<Post>) {
-//                        if (response.isSuccessful) {
-//                            Toast.makeText(activity, "삭제되었습니다.", Toast.LENGTH_LONG).show()
-//                            activity.startActivity(Intent(activity, MyListActivity::class.java))
-//                        } else {
-//                            Toast.makeText(activity, "삭제 오류", Toast.LENGTH_LONG).show()
-//                        }
-//                    }
-//
-//                    override fun onFailure(call: Call<Post>, t: Throwable) {
-//                        Toast.makeText(activity, "서버 오류", Toast.LENGTH_LONG).show()
-//                    }
-//                })
+                (activity.application as MasterApplication).service.deletePost(
+                    postList.get(adapterPosition).id!!
+                ).enqueue(object : Callback<Post> {
+
+                    override fun onResponse(call: Call<Post>, response: Response<Post>) {
+                        if (response.isSuccessful) {
+                            Toast.makeText(activity, "삭제되었습니다.", Toast.LENGTH_LONG).show()
+                            activity.startActivity(Intent(activity, MyListActivity::class.java))
+                        } else {
+                            Toast.makeText(activity, "삭제 오류", Toast.LENGTH_LONG).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<Post>, t: Throwable) {
+                        Toast.makeText(activity, "서버 오류", Toast.LENGTH_LONG).show()
+                    }
+                })
             }
 
             itemView.findViewById<TextView>(R.id.update).setOnClickListener {
