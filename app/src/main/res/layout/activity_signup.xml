@@ -123,6 +123,7 @@
                     android:background="@drawable/rounded_button"
                     android:textColorHint="#A22000"
                     android:hint="Password"
+                    android:inputType="textPassword"
                     android:textAlignment="textStart"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -136,6 +137,7 @@
                     android:background="@drawable/rounded_button"
                     android:textColorHint="#A22000"
                     android:hint="Confirm Password"
+                    android:inputType="textPassword"
                     android:textAlignment="textStart"
                     android:textSize="18dp"
                     android:textStyle="bold" />
