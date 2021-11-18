@@ -6,7 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_login1.*
+import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -15,7 +15,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_login1)
+        setContentView(R.layout.activity_login)
         setupListener(this@LoginActivity)
     }
 

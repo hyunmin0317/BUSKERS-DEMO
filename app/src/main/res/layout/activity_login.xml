@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="4"
+        android:layout_weight="5"
         android:orientation="vertical">
 
         <LinearLayout
@@ -64,8 +64,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="6">
+        android:layout_weight="5">
         <TextView
+            android:id="@+id/signup"
             android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,7 +103,7 @@
                 android:orientation="vertical"
                 android:layout_weight="1">
                 <EditText
-                    android:id="@+id/busker"
+                    android:id="@+id/username_inputbox"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -114,7 +115,7 @@
                     android:textSize="18dp"
                     android:textStyle="bold" />
                 <EditText
-                    android:id="@+id/listener"
+                    android:id="@+id/password_inputbox"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -125,6 +126,20 @@
                     android:textAlignment="textStart"
                     android:textSize="18dp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/acube"
+                    android:padding="15dp"
+                    android:background="@drawable/rounded_button_white"
+                    android:textColor="#A22000"
+                    android:gravity="center"
+                    android:text="로그인"
+                    android:textSize="18dp" />
             </LinearLayout>
 
             <LinearLayout
