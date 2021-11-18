@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_signup1.*
+import kotlinx.android.synthetic.main.activity_signup.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,7 +17,7 @@ class SignupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_signup1)
+        setContentView(R.layout.activity_signup)
         login.setOnClickListener { startActivity(Intent(this@SignupActivity, LoginActivity::class.java)) }
         signup.setOnClickListener { register(this@SignupActivity) }
     }
@@ -42,8 +42,6 @@ class SignupActivity : AppCompatActivity() {
                         activity.startActivity(Intent(activity, ChooseActivity::class.java))
                     } else {
                         Toast.makeText(activity, "사용할 수 없는 아이디입니다.", Toast.LENGTH_LONG).show()
-                        Toast.makeText(activity, response.toString(), Toast.LENGTH_LONG).show()
-
                     }
                 }
 
