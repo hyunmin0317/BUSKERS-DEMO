@@ -48,4 +48,18 @@ interface RetrofitService {
         @Part image: MultipartBody.Part,
         @Part ("content") requestBody: RequestBody
     ):Call<Post>
+
+    @POST("user/profile/create/")
+    @FormUrlEncoded
+    fun uploadProfile(
+        @Field("username") username: String
+    ):Call<Profile>
+
+    @Multipart
+    @PUT("user/profile/{pk}/update/")
+    fun updateProfile(
+        @Path("pk") pk: Int,
+        @Part image: MultipartBody.Part,
+        @Part ("content") requestBody: RequestBody
+    ):Call<Profile>
 }
