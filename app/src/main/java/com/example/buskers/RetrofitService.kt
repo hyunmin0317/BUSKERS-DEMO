@@ -55,6 +55,11 @@ interface RetrofitService {
         @Field("username") username: String
     ):Call<Profile>
 
+    @GET("user/profile/{owner}/")
+    fun getProfile(
+        @Path("owner") owner: String
+    ):Call<Profile>
+
     @Multipart
     @PUT("user/profile/{owner}/update/")
     fun updateProfile(

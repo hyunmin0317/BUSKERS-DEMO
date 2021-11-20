@@ -1,5 +1,6 @@
 package com.example.buskers
 
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -29,6 +30,7 @@ class ProfileUpdateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_update)
+
 
         val cameraPermissionCheck = ContextCompat.checkSelfPermission(
             this@ProfileUpdateActivity,
@@ -79,23 +81,31 @@ class ProfileUpdateActivity : AppCompatActivity() {
         val file = File(filePath)
         val fileRequestBody = RequestBody.create(MediaType.parse("image/*"), file)
         val part = MultipartBody.Part.createFormData("image", file.name, fileRequestBody)
+        val owner = getUserName()
 
-//        (application as MasterApplication).service.uploadPost(
-//            part
-//        ).enqueue(object : Callback<Post> {
-//            override fun onResponse(call: Call<Post>, response: Response<Post>) {
-//                if (response.isSuccessful) {
-//                    finish()
-//                    Toast.makeText(this@ProfileUpdateActivity, "저장되었습니다.", Toast.LENGTH_LONG).show()
-//                    startActivity(Intent(this@ProfileUpdateActivity, MyListActivity::class.java))
-//                } else {
-//                    Toast.makeText(this@ProfileUpdateActivity, "400 Bad Request", Toast.LENGTH_LONG).show()
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<Post>, t: Throwable) {
-//                Toast.makeText(this@ProfileUpdateActivity, "서버 오류", Toast.LENGTH_LONG).show()
-//            }
-//        })
+        (application as MasterApplication).service.updateProfile(
+            owner!!, part
+        ).enqueue(object : Callback<Profile> {
+            override fun onResponse(call: Call<Profile>, response: Response<Profile>) {
+                if (response.isSuccessful) {
+                    finish()
+                    Toast.makeText(this@ProfileUpdateActivity, "저장되었습니다.", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this@ProfileUpdateActivity, UserInfo::class.java))
+                } else {
+                    Toast.makeText(this@ProfileUpdateActivity, "400 Bad Request", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<Profile>, t: Throwable) {
+                Toast.makeText(this@ProfileUpdateActivity, "서버 오류", Toast.LENGTH_LONG).show()
+            }
+        })
+    }
+
+    fun getUserName(): String? {
+        val sp = getSharedPreferences("login", Context.MODE_PRIVATE)
+        val username = sp.getString("username", "null")
+        if (username == "null") return null
+        else return username
     }
 }
