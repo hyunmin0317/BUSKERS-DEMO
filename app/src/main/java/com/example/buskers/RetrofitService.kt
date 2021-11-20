@@ -56,10 +56,9 @@ interface RetrofitService {
     ):Call<Profile>
 
     @Multipart
-    @PUT("user/profile/{pk}/update/")
+    @PUT("user/profile/{owner}/update/")
     fun updateProfile(
-        @Path("pk") pk: Int,
-        @Part image: MultipartBody.Part,
-        @Part ("content") requestBody: RequestBody
+        @Path("owner") owner: String,
+        @Part image: MultipartBody.Part
     ):Call<Profile>
 }
