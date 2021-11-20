@@ -28,11 +28,11 @@ class UserInfo : AppCompatActivity() {
                     val profile = response.body()
 
                     if (profile!!.image == null)
-
+                        setImage("https://github.com/hyunmin0317/BUSKERS-FrontEnd/blob/master/github/basic.jpg?raw=true")
                     else
                         setImage(profile!!.image)
                 } else {
-                    Toast.makeText(this@UserInfo, "400 Bad Request", Toast.LENGTH_LONG).show()
+                    setImage("https://github.com/hyunmin0317/BUSKERS-FrontEnd/blob/master/github/basic.jpg?raw=true")
                 }
             }
 
@@ -49,16 +49,18 @@ class UserInfo : AppCompatActivity() {
         profile_delete.setOnClickListener {
             (application as MasterApplication).service.deleteProfile(username).enqueue(object :
                 Callback<Profile> {
-                override fun onResponse(call: Call<Profile>, response: Response<Profile>) {}
+                override fun onResponse(call: Call<Profile>, response: Response<Profile>) {
+                    (application as MasterApplication).service.uploadProfile(username).enqueue(object :
+                        Callback<Profile> {
+                        override fun onResponse(call: Call<Profile>, response: Response<Profile>) {}
+
+                        override fun onFailure(call: Call<Profile>, t: Throwable) {}
+                    })
+                }
 
                 override fun onFailure(call: Call<Profile>, t: Throwable) {}
             })
-            (application as MasterApplication).service.uploadProfile(username).enqueue(object :
-                Callback<Profile> {
-                override fun onResponse(call: Call<Profile>, response: Response<Profile>) {}
 
-                override fun onFailure(call: Call<Profile>, t: Throwable) {}
-            })
             startActivity(Intent(this, UserInfo::class.java))
         }
 
