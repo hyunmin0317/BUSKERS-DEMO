@@ -19,6 +19,7 @@ class UserInfo : AppCompatActivity() {
         all_list.setOnClickListener { startActivity(Intent(this, ListActivity::class.java)) }
         my_list.setOnClickListener { startActivity(Intent(this, MyListActivity::class.java)) }
         upload.setOnClickListener { startActivity(Intent(this, UploadActivity::class.java)) }
+        profile_update.setOnClickListener { startActivity(Intent(this, ProfileUpdateActivity::class.java)) }
 
         logout.setOnClickListener {
             val sp = getSharedPreferences("login", Context.MODE_PRIVATE)
