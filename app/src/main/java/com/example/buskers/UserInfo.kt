@@ -46,6 +46,22 @@ class UserInfo : AppCompatActivity() {
         upload.setOnClickListener { startActivity(Intent(this, UploadActivity::class.java)) }
         profile_update.setOnClickListener { startActivity(Intent(this, ProfileUpdateActivity::class.java)) }
 
+        profile_delete.setOnClickListener {
+            (application as MasterApplication).service.deleteProfile(username).enqueue(object :
+                Callback<Profile> {
+                override fun onResponse(call: Call<Profile>, response: Response<Profile>) {}
+
+                override fun onFailure(call: Call<Profile>, t: Throwable) {}
+            })
+            (application as MasterApplication).service.uploadProfile(username).enqueue(object :
+                Callback<Profile> {
+                override fun onResponse(call: Call<Profile>, response: Response<Profile>) {}
+
+                override fun onFailure(call: Call<Profile>, t: Throwable) {}
+            })
+            startActivity(Intent(this, UserInfo::class.java))
+        }
+
         logout.setOnClickListener {
             val sp = getSharedPreferences("login", Context.MODE_PRIVATE)
             val editor = sp.edit()

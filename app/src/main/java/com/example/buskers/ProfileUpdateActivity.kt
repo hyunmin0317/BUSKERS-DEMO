@@ -10,12 +10,7 @@ import android.provider.MediaStore
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_my_list.*
 import kotlinx.android.synthetic.main.activity_profile_update.*
-import kotlinx.android.synthetic.main.activity_profile_update.all_list
-import kotlinx.android.synthetic.main.activity_profile_update.my_list
-import kotlinx.android.synthetic.main.activity_profile_update.upload
-import kotlinx.android.synthetic.main.activity_profile_update.user_info
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
