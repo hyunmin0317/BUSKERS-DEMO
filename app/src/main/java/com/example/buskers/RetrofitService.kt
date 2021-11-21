@@ -49,6 +49,9 @@ interface RetrofitService {
         @Part ("content") requestBody: RequestBody
     ):Call<Post>
 
+    @GET("user/profile/all/")
+    fun getProfileList():Call<ArrayList<Profile>>
+
     @POST("user/profile/create/")
     @FormUrlEncoded
     fun uploadProfile(
